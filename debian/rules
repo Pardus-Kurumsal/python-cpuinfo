@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=cpuinfo
+export PYBUILD_DEST_DIR_python2=debian/python-$(PYBUILD_NAME)
+export PYBUILD_DEST_DIR_python3=debian/python3-$(PYBUILD_NAME)
+export PYBUILD_DEST_DIR_APP=debian/py-cpuinfo
+
+%:
+	dh $@ --with python2,python3 --buildsystem=pybuild
+
+override_dh_auto_install:
+	dh_auto_install
+	# Move the python3 application to the application package.
+	mkdir -p $(PYBUILD_DEST_DIR_APP)/usr/bin
+	mv $(PYBUILD_DEST_DIR_python3)/usr/bin/cpuinfo $(PYBUILD_DEST_DIR_APP)/usr/bin/py-cpuinfo
+	# Remove the python2 application.
+	rm $(PYBUILD_DEST_DIR_python2)/usr/bin/cpuinfo

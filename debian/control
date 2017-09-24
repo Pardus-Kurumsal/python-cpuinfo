@@ -1,0 +1,44 @@
+Source: python-cpuinfo
+Section: python
+Priority: optional
+Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Uploaders: Hugo Lefeuvre <hle@debian.org>
+Build-Depends: debhelper (>= 10),
+               dh-python,
+               python-all,
+               python-setuptools,
+               python3-all,
+               python3-setuptools
+Standards-Version: 4.1.0
+Homepage: https://github.com/workhorsy/py-cpuinfo
+X-Python-Version: >= 2.6
+X-Python3-Version: >= 3.2
+Vcs-Git: https://anonscm.debian.org/git/python-modules/packages/python-cpuinfo.git
+Vcs-Browser: https://anonscm.debian.org/cgit/python-modules/packages/python-cpuinfo.git/
+
+Package: python-cpuinfo
+Architecture: all
+Depends: ${misc:Depends},
+         ${python:Depends}
+Description: Python module for getting CPU info
+ The cpuinfo Python module provides pure Python tools for getting CPU infos.
+ .
+ This package installs the library for Python 2.
+
+Package: python3-cpuinfo
+Architecture: all
+Depends: ${misc:Depends},
+         ${python3:Depends}
+Description: Python module for getting CPU info (Python 3)
+ The cpuinfo Python module provides pure Python tools for getting CPU infos.
+ .
+ This package installs the library for Python 3.
+
+Package: py-cpuinfo
+Architecture: all
+Section: admin
+Depends: python3-cpuinfo,
+         ${misc:Depends},
+         ${python3:Depends}
+Description: Python script for getting CPU info
+ py-cpuinfo provides a simple way to get CPU infos from the command line.
