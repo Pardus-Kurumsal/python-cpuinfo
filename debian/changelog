@@ -1,3 +1,10 @@
+python-cpuinfo (3.3.0-1pardus1) unstable; urgency=medium
+
+  * Pardus CI Implementation
+  * Update control file
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Tue, 21 Nov 2017 15:52:02 +0300
+
 python-cpuinfo (3.3.0-1) unstable; urgency=medium
 
   * New upstream release.
